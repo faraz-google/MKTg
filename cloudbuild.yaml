@@ -1,0 +1,31 @@
+# RealPage Project RePlatform - Cloud Build & Cloud Run Deployment Pipeline (Section 4 & 5)
+steps:
+  # Step 1: Build immutable container image for the G5 Staging & Ingestion Engine
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/replatform-repo/g5-presentation-engine:$COMMIT_SHA'
+      - '.'
+
+  # Step 2: Push image to Google Cloud Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/replatform-repo/g5-presentation-engine:$COMMIT_SHA'
+
+  # Step 3: Deploy to Cloud Run Staging Environment with Secret Manager & VPC-SC perimeter
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'replatform-staging-engine'
+      - '--image=us-central1-docker.pkg.dev/$PROJECT_ID/replatform-repo/g5-presentation-engine:$COMMIT_SHA'
+      - '--region=us-central1'
+      - '--platform=managed'
+      - '--no-allow-unauthenticated'
+      - '--set-env-vars=NODE_ENV=production'
+
+images:
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/replatform-repo/g5-presentation-engine:$COMMIT_SHA'

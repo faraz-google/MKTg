@@ -1,0 +1,15 @@
+{
+  "name": "realpage-project-replatform-poc",
+  "version": "1.0.0",
+  "description": "RealPage Autonomous Site Ingestion & Presentation Engine (Project RePlatform) - Phase 0 Executive Demo PoC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "author": "Faraz Javaid (Google Cloud AI/ML CE)",
+  "license": "PROPRIETARY"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "realpage-g5-enterprise-cms",
+  "version": "2.0.0",
+  "description": "RealPage G5 v9.0 Enterprise CMS & Autonomous Experience Platform (Data Hub MCP, Vendor Shedding, AEO, Self-Service Intake Agent, Firestore/BigQuery 1-Click Rollbacks)",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

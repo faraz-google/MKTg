@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealPage Project RePlatform v2.0 | G5 v9.0 Enterprise CMS &amp; Autonomous Migration Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Top Executive Governance Header -->
+  <header class="rp-topbar">
+    <div class="rp-topbar-left">
+      <div class="rp-brand-mark">RP</div>
+      <div>
+        <div class="rp-title-row">
+          <h1 class="rp-app-title">RealPage G5 v9.0 Enterprise CMS &amp; Autonomous RePlatform</h1>
+          <span class="rp-badge rp-badge-gcp">Gemini Enterprise + Cloud Run SSR + Figma API Lock</span>
+          <span class="rp-badge rp-badge-guardrail">No &ldquo;Pumpkin Villages&rdquo; &bull; Live Production Build</span>
+        </div>
+        <p class="rp-app-subtitle">
+          Matt &amp; Veronica Executive Review &bull; Data Hub MCP Intake &bull; OneTrust/Honeybadger Vendor Shedding &bull; AEO Engine &bull; Firestore 1-Click Rollbacks
+        </p>
+      </div>
+    </div>
+    <div class="rp-topbar-right">
+      <div class="rp-kpi-pill">
+        <span class="rp-kpi-label">Pilot Time-to-Value</span>
+        <span class="rp-kpi-value">&lt; 8 Weeks ($1.4M GE Funded)</span>
+      </div>
+      <div class="rp-kpi-pill">
+        <span class="rp-kpi-label">Data Hub MCP Sync</span>
+        <span class="rp-kpi-value">0 Redundant Client Calls</span>
+      </div>
+      <div class="rp-kpi-pill">
+        <span class="rp-kpi-label">Vendor Shedding &amp; AEO</span>
+        <span class="rp-kpi-value">Lighthouse 58 &rarr; 98</span>
+      </div>
+      <div class="rp-kpi-pill">
+        <span class="rp-kpi-label">Firestore + BigQuery</span>
+        <span class="rp-kpi-value">1-Click CMS Rollbacks</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace Container -->
+  <main class="rp-workspace">
+    <!-- Left Column: Property Selector, Data Hub Quick-Sync, 8-Stage GCP Pipeline Telemetry & HITL Sign-Off -->
+    <aside class="rp-sidebar">
+      <section class="rp-card">
+        <div class="rp-card-header">
+          <h2 class="rp-card-title">1. Matt&rsquo;s 3 Live G5 v9.0 Sites &amp; Fleet</h2>
+          <span class="rp-step-tag">G5 v9.0 + Data Hub</span>
+        </div>
+
+        <p class="rp-helper-text">
+          Select one of Matt&rsquo;s 3 scraped G5 v9.0 (&ldquo;Alpine - Simple&rdquo;) production properties or legacy fleet sites, or crawl any public HTTPS URL:
+        </p>
+
+        <div id="preset-selector-list" class="rp-preset-list" role="radiogroup" aria-label="Demo Property Presets"></div>
+
+        <div class="rp-form-group">
+          <label for="custom-url-input" class="rp-label">Or Crawl Custom External Property URL (HTTPS):</label>
+          <div class="rp-input-row">
+            <input
+              id="custom-url-input"
+              type="url"
+              class="rp-input"
+              placeholder="https://www.2424tulane.com"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="rp-form-group">
+          <label for="template-select" class="rp-label">Figma-Locked G5 v9.0 Design System Template:</label>
+          <select id="template-select" class="rp-select"></select>
+        </div>
+
+        <button id="run-ingestion-btn" type="button" class="rp-btn rp-btn-primary rp-btn-full">
+          Run One-Click Lift &amp; Shift + Data Hub Sync
+        </button>
+      </section>
+
+      <!-- 8-Stage GCP Pipeline Telemetry -->
+      <section class="rp-card">
+        <div class="rp-card-header">
+          <h2 class="rp-card-title">2. GCP Execution Telemetry</h2>
+          <span id="pipeline-status-badge" class="rp-step-tag rp-tag-ready">8 Stages Verified</span>
+        </div>
+        <div id="pipeline-steps-container" class="rp-pipeline-list"></div>
+      </section>
+
+      <!-- HITL Governance Sign-Off Card -->
+      <section class="rp-card rp-card-hitl">
+        <div class="rp-card-header">
+          <h2 class="rp-card-title">3. Human-in-the-Loop Governance</h2>
+          <span class="rp-step-tag">Spanner + Firestore</span>
+        </div>
+        <div id="hitl-status-container"></div>
+      </section>
+    </aside>
+
+    <!-- Right Column: Interactive Staging Preview, Visual CMS Studio, Client Intake Agent, Data Hub/Vendor Shedding & Historic Audit Rollback -->
+    <section class="rp-main-stage">
+      <!-- Top Control & Tab Bar -->
+      <div class="rp-stage-toolbar">
+        <div class="rp-tabs" role="tablist">
+          <button type="button" class="rp-tab active" data-tab="tab-preview" role="tab" aria-selected="true">
+            1. Live G5 v9.0 Site Preview
+          </button>
+          <button type="button" class="rp-tab" data-tab="tab-cms" role="tab" aria-selected="false">
+            2. G5 Visual CMS Studio &amp; Figma Lock
+          </button>
+          <button type="button" class="rp-tab" data-tab="tab-intake" role="tab" aria-selected="false">
+            3. Client AI Intake Agent (Feature 3)
+          </button>
+          <button type="button" class="rp-tab" data-tab="tab-datahub-aeo" role="tab" aria-selected="false">
+            4. Data Hub + Vendor Shedding &amp; AEO (Features 1 &amp; 2)
+          </button>
+          <button type="button" class="rp-tab" data-tab="tab-audit" role="tab" aria-selected="false">
+            5. Audit Log &amp; 1-Click Rollback (Feature 4)
+          </button>
+          <button type="button" class="rp-tab" data-tab="tab-widgets" role="tab" aria-selected="false">
+            6. Widget Sandbox &amp; GCP Architecture
+          </button>
+        </div>
+
+        <div class="rp-toolbar-actions">
+          <label class="rp-cors-toggle-label" title="Simulate competitor domain blocking external JS widget via CORS to demonstrate FR-2.4 Graceful Degradation">
+            <input type="checkbox" id="cors-fallback-checkbox" />
+            <span>Simulate Competitor CORS Block (FR-2.4)</span>
+          </label>
+          <div class="rp-viewport-btns" aria-label="Preview Viewport">
+            <button type="button" class="rp-vp-btn active" data-vp="desktop">Desktop</button>
+            <button type="button" class="rp-vp-btn" data-vp="tablet">Tablet</button>
+            <button type="button" class="rp-vp-btn" data-vp="mobile">Mobile</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 1: Live G5 v9.0 Staging Preview -->
+      <div id="tab-preview" class="rp-tab-panel active">
+        <div class="rp-browser-chrome">
+          <div class="rp-browser-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-amber"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="rp-browser-urlbar">
+            <span class="rp-lock-badge">IAP + 1st-Party CDN</span>
+            <span id="staging-url-display" class="rp-url-text">https://staging-2424-tulane-nola.realpage-preview.com</span>
+          </div>
+          <div id="staging-template-pill" class="rp-browser-meta">G5 Alpine v9.0.8</div>
+        </div>
+
+        <!-- Viewport Frame Containing the Generated G5 v9.0 Standardized Property Website -->
+        <div id="staging-viewport-wrapper" class="rp-viewport-wrapper vp-desktop">
+          <div id="g5-staging-site-root" class="g5-site-canvas"></div>
+        </div>
+      </div>
+
+      <!-- TAB 2: G5 Visual CMS Studio & Figma Guardrail Editor -->
+      <div id="tab-cms" class="rp-tab-panel">
+        <div id="cms-studio-root"></div>
+      </div>
+
+      <!-- TAB 3: Interactive Client-Facing AI Intake Agent (Feature 3) -->
+      <div id="tab-intake" class="rp-tab-panel">
+        <div id="intake-agent-root"></div>
+      </div>
+
+      <!-- TAB 4: RealPage Data Hub MCP + Vendor Shedding & AEO Engine (Features 1 & 2) -->
+      <div id="tab-datahub-aeo" class="rp-tab-panel">
+        <div id="datahub-aeo-root"></div>
+      </div>
+
+      <!-- TAB 5: Firestore & BigQuery Historic Audit Log + 1-Click Rollback (Feature 4) -->
+      <div id="tab-audit" class="rp-tab-panel">
+        <div id="audit-rollback-root"></div>
+      </div>
+
+      <!-- TAB 6: Third-Party Widget Sandbox, G5 Schema & GCP Architecture -->
+      <div id="tab-widgets" class="rp-tab-panel">
+        <div id="widgets-inspector-root" class="rp-inspector-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Accessible Non-Blocking Modal for Interactive Unit Leasing / 3D Virtual Tour / HITL Receipt -->
+  <div id="rp-modal-backdrop" class="rp-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="rp-modal-title">
+    <div class="rp-modal-card">
+      <div class="rp-modal-header">
+        <h3 id="rp-modal-title" class="rp-modal-title">Modal Title</h3>
+        <button id="rp-modal-close" type="button" class="rp-modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div id="rp-modal-body" class="rp-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Non-blocking Toast Notification Container -->
+  <div id="rp-toast-container" class="rp-toast-container" aria-live="polite"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

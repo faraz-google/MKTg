@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealPage G5 v9.0 Enterprise CMS Studio | Gemini Enterprise + Cloud Run SSR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/cms.css" />
+</head>
+<body>
+  <!-- Top Enterprise CMS Header -->
+  <header class="cms-header">
+    <div class="cms-header-left">
+      <div class="cms-logo">G5<span>CMS</span></div>
+      <div>
+        <div class="cms-title-row">
+          <h1 class="cms-title">RealPage G5 v9.0 Enterprise CMS Studio</h1>
+          <span class="cms-pill cms-pill-blue">Figma API Guardrail Lock</span>
+          <span class="cms-pill cms-pill-emerald">No &ldquo;Pumpkin Villages&rdquo; &bull; Full CRUD + Rollback</span>
+        </div>
+        <p class="cms-subtitle">
+          Built on Google Cloud Run SSR &bull; Data Hub MCP Intake &bull; OneTrust/Honeybadger Vendor Shedding &bull; AEO Engine &bull; Firestore/BigQuery Audit Trail
+        </p>
+      </div>
+    </div>
+
+    <div class="cms-header-right">
+      <div class="cms-stat-chip">
+        <span class="cms-stat-label">Pilot Target</span>
+        <span class="cms-stat-val">&lt; 8 Weeks ($1.4M GE)</span>
+      </div>
+      <div class="cms-stat-chip">
+        <span class="cms-stat-label">Active Revision</span>
+        <span id="header-active-revision" class="cms-stat-val">v1.0</span>
+      </div>
+      <div class="cms-stat-chip">
+        <span class="cms-stat-label">Lighthouse / WCAG</span>
+        <span id="header-lighthouse-score" class="cms-stat-val">98 / 100 AA</span>
+      </div>
+      <button id="header-publish-btn" type="button" class="cms-btn cms-btn-emerald">
+        Publish to G5 Cloud Run Edge
+      </button>
+    </div>
+  </header>
+
+  <!-- Main 2-Column Enterprise CMS Layout -->
+  <main class="cms-layout">
+    <!-- Left Sidebar: Property Switcher, Quick URL Ingest, and CMS Module Navigation -->
+    <aside class="cms-sidebar">
+      <section class="cms-panel">
+        <div class="cms-panel-head">
+          <h2 class="cms-panel-title">G5 v9.0 Portfolio Sites</h2>
+          <span class="cms-tag">Matt&rsquo;s 3 Live URLs</span>
+        </div>
+        <div id="cms-property-list" class="cms-prop-list"></div>
+
+        <div class="cms-new-site-box">
+          <label for="new-site-url-input" class="cms-label">+ Ingest New HTTPS Property URL into CMS:</label>
+          <input
+            id="new-site-url-input"
+            type="url"
+            class="cms-input"
+            placeholder="https://www.2424tulane.com"
+            autocomplete="off"
+          />
+          <button id="create-site-btn" type="button" class="cms-btn cms-btn-primary cms-btn-full">
+            Crawl URL + Hydrate CMS Site
+          </button>
+        </div>
+      </section>
+
+      <!-- CMS Workspace Modules Navigation -->
+      <section class="cms-panel">
+        <div class="cms-panel-head">
+          <h2 class="cms-panel-title">CMS Studio Modules</h2>
+          <span class="cms-tag">6 Core Engines</span>
+        </div>
+        <nav class="cms-module-nav" aria-label="CMS Modules">
+          <button type="button" class="cms-nav-btn active" data-module="mod-split-studio">
+            <span>1. Visual Page Builder &amp; Live G5 Preview</span>
+            <small>Toggle/Reorder Stripes + Edit Hero &amp; Metadata</small>
+          </button>
+          <button type="button" class="cms-nav-btn" data-module="mod-floorplans-dam">
+            <span>2. Floor Plans (PMS/IUI) &amp; Media DAM</span>
+            <small>CRUD Residences, Amenities &amp; Cloudinary Assets</small>
+          </button>
+          <button type="button" class="cms-nav-btn" data-module="mod-intake-agent">
+            <span>3. Client AI Intake Agent (Feature 3)</span>
+            <small>Self-Service Conversational Config Builder</small>
+          </button>
+          <button type="button" class="cms-nav-btn" data-module="mod-datahub">
+            <span>4. RealPage Data Hub MCP (Feature 1)</span>
+            <small>Zero-Call Canonical Property Pre-Population</small>
+          </button>
+          <button type="button" class="cms-nav-btn" data-module="mod-vendors-aeo">
+            <span>5. Vendor Shedding &amp; AEO Engine (Feature 2)</span>
+            <small>Shed OneTrust/Honeybadger + Schema.org JSON-LD</small>
+          </button>
+          <button type="button" class="cms-nav-btn" data-module="mod-audit-rollback">
+            <span>6. Firestore / BigQuery Audit &amp; Rollback (Feature 4)</span>
+            <small>Immutable Version History + 1-Click Restore</small>
+          </button>
+        </nav>
+      </section>
+
+      <!-- Figma Design Token Guardrail Lock Status -->
+      <section class="cms-panel">
+        <div class="cms-panel-head">
+          <h2 class="cms-panel-title">Figma API Token Lock</h2>
+          <span class="cms-tag cms-tag-emerald">Enforced</span>
+        </div>
+        <div class="cms-form-group">
+          <label for="sidebar-design-system-select" class="cms-label">Active Figma-Locked G5 v9.0 Theme:</label>
+          <select id="sidebar-design-system-select" class="cms-select"></select>
+        </div>
+        <div id="figma-token-swatches" class="cms-swatch-grid"></div>
+      </section>
+    </aside>
+
+    <!-- Main Content Stage -->
+    <section class="cms-stage">
+      <!-- MODULE 1: Split-Screen Visual Page Builder & Live G5 v9.0 Website Preview -->
+      <div id="mod-split-studio" class="cms-module-view active">
+        <div class="cms-split-grid">
+          <!-- Left Pane of Split: Visual Page Builder & Copy Editor -->
+          <div class="cms-editor-column">
+            <div class="cms-card">
+              <div class="cms-card-header">
+                <h3>G5 v9.0 Page Stripe Stack (Anti-Vibe-Coding Lock)</h3>
+                <span class="cms-tag">Drag-Free Reorder &amp; Toggle</span>
+              </div>
+              <p class="cms-help">
+                Toggle, reorder, or append certified G5 v9.0 (&ldquo;Alpine - Simple&rdquo;) stripes. Every change updates the live preview and logs a Firestore revision:
+              </p>
+              <div id="stripe-stack-list" class="cms-stripe-list"></div>
+              <div class="cms-add-stripe-row">
+                <select id="add-stripe-select" class="cms-select"></select>
+                <button id="add-stripe-btn" type="button" class="cms-btn cms-btn-primary">+ Add Stripe</button>
+              </div>
+            </div>
+
+            <div class="cms-card">
+              <div class="cms-card-header">
+                <h3>Property Copy, Hero &amp; Lease Special Editor</h3>
+                <span class="cms-tag">Live Sync</span>
+              </div>
+              <div id="metadata-editor-form"></div>
+            </div>
+          </div>
+
+          <!-- Right Pane of Split: Live Interactive G5 v9.0 Website Preview -->
+          <div class="cms-preview-column">
+            <div class="cms-browser-bar">
+              <div class="cms-browser-dots">
+                <span class="b-dot b-red"></span>
+                <span class="b-dot b-amber"></span>
+                <span class="b-dot b-green"></span>
+              </div>
+              <div id="preview-url-bar" class="cms-url-pill"></div>
+              <div class="cms-vp-toggle">
+                <button type="button" class="cms-vp-btn active" data-vp="desktop">Desktop</button>
+                <button type="button" class="cms-vp-btn" data-vp="tablet">Tablet</button>
+                <button type="button" class="cms-vp-btn" data-vp="mobile">Mobile</button>
+              </div>
+            </div>
+            <div id="preview-viewport-frame" class="cms-viewport-frame vp-desktop">
+              <div id="g5-live-site-canvas" class="g5-canvas"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 2: Floor Plans (PMS/IUI Inventory) & Cloudinary/GCS Media DAM -->
+      <div id="mod-floorplans-dam" class="cms-module-view">
+        <div id="floorplans-dam-root" class="cms-two-col"></div>
+      </div>
+
+      <!-- MODULE 3: Interactive Client-Facing AI Intake Agent (Feature 3) -->
+      <div id="mod-intake-agent" class="cms-module-view">
+        <div id="intake-agent-root" class="cms-two-col"></div>
+      </div>
+
+      <!-- MODULE 4: RealPage Data Hub MCP Intake Engine (Feature 1) -->
+      <div id="mod-datahub" class="cms-module-view">
+        <div id="datahub-root" class="cms-two-col"></div>
+      </div>
+
+      <!-- MODULE 5: Vendor Shedding, First-Party Spanner Consent & AEO Engine (Feature 2) -->
+      <div id="mod-vendors-aeo" class="cms-module-view">
+        <div id="vendors-aeo-root" class="cms-two-col"></div>
+      </div>
+
+      <!-- MODULE 6: Firestore & BigQuery Historic Audit Log + 1-Click Rollback (Feature 4) -->
+      <div id="mod-audit-rollback" class="cms-module-view">
+        <div id="audit-rollback-root"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Accessible Non-Blocking Modal -->
+  <div id="cms-modal-backdrop" class="cms-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="cms-modal-title">
+    <div class="cms-modal-card">
+      <div class="cms-modal-head">
+        <h3 id="cms-modal-title">Modal Title</h3>
+        <button id="cms-modal-close" type="button" class="cms-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div id="cms-modal-body" class="cms-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="cms-toast-container" class="cms-toast-container" aria-live="polite"></div>
+
+  <script src="/cms.js"></script>
+</body>
+</html>
